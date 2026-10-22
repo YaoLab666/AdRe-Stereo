@@ -1,0 +1,9 @@
+torch>=1.12
+torchvision>=0.13
+timm>=0.6
+numpy>=1.21
+Pillow>=8.4
+opencv-python>=4.5
+imageio>=2.19
+tensorboard>=2.9
+tqdm>=4.64
