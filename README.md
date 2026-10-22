@@ -1,7 +1,7 @@
 # Adapt, Then Refine: Test-Time Geometry Adaptation for Stereo Matching
 
 ## Network architecture
-![image](Figure2.jpg)
+![image](figure/Figure2.jpg)
 AdRe-Stereo introduces a lightweight three-branch Test-Time Geometry Adapter (TTGA). It adapts the geometry encoding volume to each stereo pair before dense disparity initialization and recurrent refinement.
 
 ## Create a virtual environment and activate it.
@@ -46,7 +46,6 @@ Scene Flow:
 CUDA_VISIBLE_DEVICES=0,1 python train_adre_stereo.py \
   --name adre_stereo_sceneflow \
   --logdir checkpoints/adre_stereo_sceneflow \
-  --restore_ckpt /path/to/source_domain_checkpoint.pth \
   --train_datasets sceneflow
 ```
 
