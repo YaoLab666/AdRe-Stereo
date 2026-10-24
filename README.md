@@ -127,3 +127,8 @@ python -m pytest -q
 python -m compileall -q core train_adre_stereo.py evaluate_adre_stereo.py \
   submit_adre_stereo.py
 ```
+## Acknowledgements
+This project is built upon the following excellent open-source works. We sincerely thank their authors for releasing high-quality implementations and inspiring this research.
+- Our codebase is developed based on [IGEV-Stereo / IGEV++](https://github.com/gangweiX/IGEV). We thank the authors for their outstanding iterative geometry encoding volume framework.
+- The test-time training mechanism in this work draws inspiration from [Learning to (Learn at Test Time)](https://github.com/test-time-training/ttt-lm-jax). We thank the authors for their insightful research on test-time adaptation.
+
