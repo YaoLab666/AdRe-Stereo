@@ -1,8 +1,39 @@
 # Adapt, Then Refine: Test-Time Geometry Adaptation for Stereo Matching
+## 📢 News
+- **October 2026**: We officially release the full PyTorch implementation of **AdRe-Stereo** (Adapt, Then Refine: Test-Time Geometry Adaptation for Stereo Matching). This repository provides complete training pipelines, evaluation scripts, and benchmark submission tools for all five standard stereo matching datasets.
 
-## Network architecture
-![image](Figure2.jpg)
-AdRe-Stereo introduces a lightweight three-branch Test-Time Geometry Adapter (TTGA). It adapts the geometry encoding volume to each stereo pair before dense disparity initialization and recurrent refinement.
+
+## Method Overview
+![Overall framework of AdRe-Stereo](Figure2.jpg)
+
+AdRe-Stereo proposes a novel **adapt-then-refine** paradigm for iterative stereo matching, addressing the core limitation that offline-learned geometry encoding parameters remain fixed across all inputs, leading to highly concentrated matching errors in weak-texture, repetitive-structure, occlusion, and disparity-boundary regions.
+
+### Highlights
+- Top-tier accuracy among **pure stereo matching methods** (no extra monocular depth priors) on five standard benchmarks.
+- 19.1% relative EPE reduction over IGEV baseline on Scene Flow, with almost no parameter increase.
+- Strong cross-domain generalization and cross-backbone transferability (verified on RT-IGEV).
+- Flexible accuracy-efficiency configuration to fit different deployment requirements.
+
+## Performance Summary
+We evaluate AdRe-Stereo on five widely used stereo matching benchmarks. The table below summarizes the main performance metrics of our method.
+
+| Dataset | Metric | AdRe-Stereo (Best) |
+| :--- | :--- | :---: |
+| **Scene Flow** | EPE (px) ↓ | **0.38** |
+| | Params (M) | 12.61 |
+| | Runtime (ms, w/ early exit) | 312 |
+| **KITTI 2012** | 3-noc error (%) ↓ | **0.85** |
+| | 3-all error (%) ↓ | **1.03** |
+| **KITTI 2015** | D1-all error (%) ↓ | **1.54** |
+| | D1-fg error (%) ↓ | **2.52** |
+| **Middlebury 2014 (half)** | Bad-2 (%) ↓ | **6.5** |
+| **Middlebury 2014 (quarter)** | Bad-2 (%) ↓ | **5.6** |
+| **ETH3D** | Bad-1 (%) ↓ | **3.3** |
+
+> **Notes**:
+> - Best results are obtained with 32 fixed refinement iterations and full TTGA test-time adaptation.
+> - Runtime is measured on a single NVIDIA RTX 3090 GPU.
+> - Cross-domain results on Middlebury and ETH3D are evaluated with models trained only on Scene Flow (no target-domain fine-tuning).
 
 ## Create a virtual environment and activate it.
 
