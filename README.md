@@ -3,7 +3,7 @@
 - **October 2026**: We officially release the full PyTorch implementation of **AdRe-Stereo** (Adapt, Then Refine: Test-Time Geometry Adaptation for Stereo Matching). This repository provides complete training pipelines, evaluation scripts, and benchmark submission tools for all five standard stereo matching datasets.
 
 
-## Method Overview
+## 1.Method Overview
 ![Overall framework of AdRe-Stereo](Figure2.jpg)
 
 AdRe-Stereo proposes a novel **adapt-then-refine** paradigm for iterative stereo matching, addressing the core limitation that offline-learned geometry encoding parameters remain fixed across all inputs, leading to highly concentrated matching errors in weak-texture, repetitive-structure, occlusion, and disparity-boundary regions.
@@ -14,7 +14,7 @@ AdRe-Stereo proposes a novel **adapt-then-refine** paradigm for iterative stereo
 - Strong cross-domain generalization and cross-backbone transferability (verified on RT-IGEV).
 - Flexible accuracy-efficiency configuration to fit different deployment requirements.
 
-## Performance Summary
+## 2.Performance Summary
 We evaluate AdRe-Stereo on five widely used stereo matching benchmarks. The table below summarizes the main performance metrics of our method.
 
 | Dataset | Metric | AdRe-Stereo (Best) |
@@ -35,7 +35,7 @@ We evaluate AdRe-Stereo on five widely used stereo matching benchmarks. The tabl
 > - Runtime is measured on a single NVIDIA RTX 3090 GPU.
 > - Cross-domain results on Middlebury and ETH3D are evaluated with models trained only on Scene Flow (no target-domain fine-tuning).
 
-## Create a virtual environment and activate it.
+## 3.Create a virtual environment and activate it.
 
 ```Shell
 conda create -n AdRe-Stereo python=3.8
@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ```
 
 
-## Datasets
+## 4.Datasets
 
 - [Scene Flow](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html)
 - [KITTI 2012/2015](https://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo)
@@ -69,7 +69,7 @@ datasets/
 Custom paths can be passed with `--sceneflow_root`, `--kitti_root`,
 `--middlebury_root`, and `--eth3d_root`.
 
-## Training
+## 5.Training
 
 Scene Flow:
 
@@ -90,7 +90,7 @@ CUDA_VISIBLE_DEVICES=0,1 python train_adre_stereo.py \
   --train_datasets kitti
 ```
 
-## Evaluation
+## 6.Evaluation
 
 ```bash
 python evaluate_adre_stereo.py \
@@ -110,7 +110,7 @@ python evaluate_adre_stereo.py \
   --adaptive_refinement
 ```
 
-## KITTI submission
+## 7.KITTI submission
 
 ```bash
 python submit_adre_stereo.py \
@@ -120,7 +120,7 @@ python submit_adre_stereo.py \
 
 Results and the submission archive are saved under `submissions/`.
 
-## Tests
+## 8.Tests
 
 ```bash
 python -m pytest -q
