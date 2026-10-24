@@ -1,6 +1,6 @@
 # Adapt, Then Refine:Test-Time Geometry Adaptation for Stereo Matching
 ## 📢 News
-- **October 2026**: We officially release the full PyTorch implementation of **AdRe-Stereo** (Adapt, Then Refine: Test-Time Geometry Adaptation for Stereo Matching). This repository provides complete training pipelines, evaluation scripts, and benchmark submission tools for all five standard stereo matching datasets.
+- **October 2026**: We officially release the full PyTorch implementation of **AdRe-Stereo**.
 
 
 ## 1.Method Overview
