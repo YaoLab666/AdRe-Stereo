@@ -98,8 +98,8 @@ python evaluate_adre_stereo.py \
   --dataset sceneflow
 ```
 
-Supported datasets: `sceneflow`, `kitti2012`, `kitti2015`, `middlebury_H`,
-`middlebury_Q`, and `eth3d`.
+Supported datasets: sceneflow, kitti2012, kitti2015, middlebury_H,
+middlebury_Q, and eth3d.
 
 Use `--adaptive_refinement` to enable early exit:
 
